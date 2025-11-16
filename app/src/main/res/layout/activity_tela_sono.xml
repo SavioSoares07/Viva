@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    android:padding="24dp">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar Sono"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:paddingBottom="30dp" />
+
+    <!-- PERGUNTA -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantas horas você dormiu hoje?"
+        android:textSize="18sp"
+        android:textColor="#444"
+        android:layout_marginBottom="12dp" />
+
+    <!-- INPUT -->
+    <EditText
+        android:id="@+id/inputSono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: 7.5"
+        android:background="@drawable/input_bg"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:inputType="numberDecimal" />
+
+    <!-- BOTÃO SALVAR -->
+    <Button
+        android:id="@+id/btnSalvarSono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:textAllCaps="false"
+        android:layout_marginTop="26dp"
+        android:backgroundTint="#9C27B0"
+        android:textColor="#FFF" />
+
+    <!-- BOTÃO VOLTAR -->
+    <Button
+        android:id="@+id/btnVoltarSono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#B0B0B0"
+        android:textColor="#FFF" />
+
+    <!-- HISTÓRICO DE SONO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:textColor="#333"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSono"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="16dp" />
+
+</LinearLayout>

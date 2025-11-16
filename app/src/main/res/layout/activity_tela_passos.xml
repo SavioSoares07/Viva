@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F2F2F2"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrar KM"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:paddingBottom="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantos quilômetros você caminhou hoje?"
+            android:textSize="18sp"
+            android:textColor="#444"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/inputKM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 3.2"
+            android:background="@drawable/input_bg"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnSalvarKm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:layout_marginTop="26dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/btnVoltarKm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#B0B0B0"
+            android:textColor="#FFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registros:"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPassos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
