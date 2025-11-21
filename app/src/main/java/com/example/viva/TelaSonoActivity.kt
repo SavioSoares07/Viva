@@ -1,13 +1,16 @@
-package com.example.hidrata
+package com.example.viva
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton // <--- Import necessário
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TelaSonoActivity : AppCompatActivity() {
 
@@ -20,16 +23,17 @@ class TelaSonoActivity : AppCompatActivity() {
 
         val input = findViewById<EditText>(R.id.inputSono)
         val btnSalvar = findViewById<Button>(R.id.btnSalvarSono)
-        val btnVoltar = findViewById<Button>(R.id.btnVoltarSono)
+
+        val btnVoltar = findViewById<ImageButton>(R.id.btnVoltarSono)
+
         val recycler = findViewById<RecyclerView>(R.id.recyclerSono)
 
-        // Carrega lista do SharedPreferences
         lista = carregarLista()
 
         adapter = SonoAdapter(lista) { pos ->
             lista.removeAt(pos)
             salvarLista()
-            adapter.notifyDataSetChanged()
+            adapter.notifyItemRemoved(pos)
         }
 
         recycler.layoutManager = LinearLayoutManager(this)
@@ -48,16 +52,17 @@ class TelaSonoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val dataHora = java.text.SimpleDateFormat("dd/MM/yyyy HH:mm")
-                .format(java.util.Date())
+            val dataHora = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+                .format(Date())
 
             val registro = Sono(horas, dataHora)
-            lista.add(registro)
+
+            lista.add(0, registro)
+            adapter.notifyItemInserted(0)
 
             salvarLista()
-            adapter.notifyDataSetChanged()
 
-            input.setText("")
+            input.text.clear()
         }
     }
 

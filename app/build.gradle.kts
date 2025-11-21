@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hidrata" // 👉 use o nome do seu pacote
+    namespace = "com.example.viva" //
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.hidrata"
+        applicationId = "com.example.viva"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

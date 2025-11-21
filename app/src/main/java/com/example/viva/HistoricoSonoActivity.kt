@@ -1,4 +1,4 @@
-package com.example.hidrata
+package com.example.viva
 
 import android.content.Context
 import android.content.Intent
@@ -39,7 +39,6 @@ class HistoricoSonoActivity : AppCompatActivity() {
         }
     }
 
-    // RECEBE O RESULTADO DA TELA DE REGISTRO
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

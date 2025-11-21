@@ -1,6 +1,5 @@
-package com.example.hidrata
+package com.example.viva
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -63,7 +62,6 @@ class TelaAguaActivity : AppCompatActivity() {
         }
     }
 
-    // ----------------- SALVAR E CARREGAR --------------------
 
     private fun salvarLista() {
         val prefs = getSharedPreferences("agua", MODE_PRIVATE)

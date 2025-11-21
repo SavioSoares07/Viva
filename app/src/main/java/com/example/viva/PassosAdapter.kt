@@ -1,27 +1,26 @@
+package com.example.viva
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hidrata.Agua
-import com.example.hidrata.R
 
-
-class AguaAdapter(
-    private val lista: MutableList<Agua>,
+class PassosAdapter(
+    private val lista: MutableList<PassosData>,
     private val onDelete: (Int) -> Unit
-) : RecyclerView.Adapter<AguaAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<PassosAdapter.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val litros = itemView.findViewById<TextView>(R.id.txtLitros)
-        val dataHora = itemView.findViewById<TextView>(R.id.txtDataHora)
-        val btnExcluir = itemView.findViewById<Button>(R.id.btnExcluir)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val km = itemView.findViewById<TextView>(R.id.txtKm)
+        val dataHora = itemView.findViewById<TextView>(R.id.txtDataHoraKm)
+        val btnExcluir = itemView.findViewById<Button>(R.id.btnExcluirKm)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_agua, parent, false)
+            .inflate(R.layout.item_passos, parent, false)
         return ViewHolder(view)
     }
 
@@ -30,7 +29,7 @@ class AguaAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = lista[position]
 
-        holder.litros.text = "${item.litros} L"
+        holder.km.text = "${item.km} km"
         holder.dataHora.text = item.dataHora
 
         holder.btnExcluir.setOnClickListener {

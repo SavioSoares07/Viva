@@ -1,4 +1,4 @@
-package com.example.hidrata
+package com.example.viva
 
 data class Agua(
     val litros: Double,

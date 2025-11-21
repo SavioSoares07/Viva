@@ -1,4 +1,4 @@
-package com.example.hidrata
+package com.example.viva
 
 import android.view.LayoutInflater
 import android.view.View

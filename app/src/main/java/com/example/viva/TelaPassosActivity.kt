@@ -1,8 +1,9 @@
-package com.example.hidrata
+package com.example.viva
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton // <--- IMPORTANTE: Adicionei este import
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@ class TelaPassosActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_passos)
+        setContentView(R.layout.activity_tela_passos) // Certifique-se que o nome do XML é este mesmo
 
         val input = findViewById<EditText>(R.id.inputKM)
         val btnSalvar = findViewById<Button>(R.id.btnSalvarKm)
@@ -57,12 +58,11 @@ class TelaPassosActivity : AppCompatActivity() {
             input.text.clear()
         }
 
-        findViewById<Button>(R.id.btnVoltarKm).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnVoltarKm).setOnClickListener {
             finish()
         }
     }
 
-    // ------------ SALVAR / CARREGAR ------------
 
     private fun salvarLista() {
         val prefs = getSharedPreferences("passos", MODE_PRIVATE)
